@@ -42,7 +42,7 @@ function [ main  ] = insect_sort( fileID )
     end
     if size(y,1) > 1
         z2 = y(2,2);
-        z3 = z1 / z2;
+        z3 = log(z1 / z2);
     end
     main = [ main ; z1 z2 z3];
     end
