@@ -39,11 +39,10 @@ function [ main  ] = insect_sort( fileID )
     z3 = 0;
     if ~isempty(y)
         z1 = y(1,2);
+        z2 = size(y,1);
+        z3 = mean(y(:,2));
     end
-    if size(y,1) > 1
-        z2 = y(2,2);
-        z3 = log(z1 / z2);
-    end
+
     main = [ main ; z1 z2 z3];
     end
     %f1 = figure;
