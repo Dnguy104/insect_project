@@ -1,11 +1,11 @@
 function [ main  ] = insect_sort( fileID )
-    fs = 16000;
-    length_each_file=15883;
+    fs = 8000;
+    length_each_file=1024;
     
     s=fileID;
 
-    s=s-repmat(mean(s,2),1,15883);
-    s=s ./ repmat(max(abs(s), [], 2), 1, 15883);
+    s=s-repmat(mean(s,2),1,length_each_file);
+    s=s ./ repmat(max(abs(s), [], 2), 1, length_each_file);
     
     
     spect = arrayfun(@(n) time2spect(s(n,:)), 1:size(s,1),'UniformOutput',0)';
